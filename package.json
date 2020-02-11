@@ -16,6 +16,8 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "http-proxy-middleware": "^0.20.0"
+    "http-proxy-middleware": "^0.20.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

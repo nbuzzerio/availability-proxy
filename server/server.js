@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('./public'));
 
+//availability proxy
 var availabilityOptions = {
   target: 'http://localhost:3003',
   changeOrigin: true,
@@ -19,8 +20,24 @@ var availabilityOptions = {
     'http://localhost:3000' : 'http://localhost:3003'
   }
 }
-var testProxy = proxy(availabilityOptions);
-app.use('/getAllMatchingBreed', testProxy);
+var availabilityProxy = proxy(availabilityOptions);
+app.use('/getAllMatchingBreed', availabilityProxy);
+
+
+//info proxy
+var infoOptions = {
+  target: 'http://localhost:3002',
+  changeOrigin: true,
+  ws: true,
+  pathRewrite: {
+    '/api/oneBreed/': 'http://localhost:3002/api/oneBreed/', // rewrite path
+  },
+  router: {
+    'http://localhost:3000' : 'http://localhost:3002'
+  }
+}
+var infoProxy = proxy(infoOptions);
+app.use('/api/oneBreed/', infoProxy);
 
 //httpexpressmiddleware
 

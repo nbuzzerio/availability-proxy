@@ -2,30 +2,29 @@
 <html lang="en">
 <head>
   <title>PetFinder Breed Page</title>
+  <style>
+    .dogImage {
+      height: 200px;
+      width: 500px;
+      object-fit: contain;
+    }
+  </style>
 </head>
 <body>
   <div id="info"></div>
   <div id="availability"></div>
-  <div id="similar"></div>
+  <div id="similarContainer"></div>
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-  <!-- <script src="http://http://localhost:3001/"></script>
-  <script src="http://http://localhost:3002/"></script> -->
+  
+  <script src="http://localhost:3002/main.js"></script>
   <script src="http://localhost:3003/bundle.js"></script>
-
+  <script src="http://localhost:3001/dist/main.js"></script>
   <script>
-    // ReactDOM.render(
-    //   React.createElement(Info),
-    //   document.getElementById('Info')
-    // );
     ReactDOM.render(
-      React.createElement(Availability),
-      document.getElementById('availability')
+      React.createElement(Similar),
+      document.getElementById('similarContainer')
     );
-    // ReactDOM.render(
-    //   React.createElement(Similar),
-    //   document.getElementById('Similar')
-    // );
   </script>
 </body>
 </html>
