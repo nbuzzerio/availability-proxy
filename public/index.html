@@ -23,8 +23,26 @@
         clear:both;
         overflow:hidden;
         width: 100%;
-        height: 90px;
+        height: 130px;
         object-fit: cover;
+      }
+
+      #main-page-bottom-bar {
+        clear:both;
+        overflow:hidden;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      #feedback {
+        height: 130px;
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        top: 70%;
+        margin-top: -65px;
+        width: 40px;
       }
   </style>
 </head>
@@ -38,8 +56,14 @@
   
       <div id="info"></div>
       <div id="availability"></div>
+      <img id="main-page-info" src="https://availabledogphotos.s3.amazonaws.com/more+static.jpg"></img>
       <div id="similarContainer"></div>
     </div>
+
+    <div id="feedback">
+      <img id="feedback-btn" src="https://availabledogphotos.s3.amazonaws.com/feedback+button.jpg" width="40" height="130"></img>
+    </div>
+    <img id="main-page-bottom-bar" src="https://sagittarius-similar.s3-us-west-1.amazonaws.com/bottombar.JPG"></img>
   
   <script src="https://sagittarius-availability.s3.amazonaws.com/main.js"></script>
   <script src="https://sagittarius-availability.s3.amazonaws.com/bundle.js"></script>
